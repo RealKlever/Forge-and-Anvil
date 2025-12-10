@@ -19,6 +19,7 @@ namespace game.dispensers
             newCoal.GetComponent<Coal>().coalDispenser = this;
             newCoal.GetComponent<Coal>().recentlySpawned = true;
             newCoal.GetComponent<Coal>().storeGUI = storeGUI;
+            newCoal.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             // , new Vector3(0.012f, -0.036f, -0.039f), new Quaternion(-0.836f, 0.412f, 0.346f, -0.107f)
         }
 

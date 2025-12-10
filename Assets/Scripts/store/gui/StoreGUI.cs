@@ -45,6 +45,8 @@ namespace store.gui
         private Dictionary<Item, StoreItemGUI> ItemsToGUIs = new Dictionary<Item, StoreItemGUI>();
 
         public CoalDispenser coalDispenser;
+        public HandleDispenser handleDispenser;
+        public IronDispenser ironDispenser;
         
         private void Start()
         {
@@ -149,6 +151,12 @@ namespace store.gui
                     if (item_amount == 1 && item == Item.COAL)
                     {
                         coalDispenser.trySpawnCoal();
+                    } else if (item_amount == 1 && item == Item.HANDLE)
+                    {
+                        handleDispenser.trySpawnHandle();
+                    } else if (item_amount == 1 && item == Item.IRON)
+                    {
+                        ironDispenser.trySpawnIron();
                     }
                     
                 }

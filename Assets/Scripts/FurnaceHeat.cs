@@ -6,7 +6,7 @@ public class FurnaceHeat : MonoBehaviour
 
     private float heatingRate;
 
-    private void Start()
+    private void Star1t()
     {
         heatingRate = temperature;
     }

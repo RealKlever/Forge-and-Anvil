@@ -4649,6 +4649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 804013722}
+  - component: {fileID: 804013723}
   m_Layer: 0
   m_Name: HandleDispenser
   m_TagString: Untagged
@@ -4665,12 +4666,27 @@ Transform:
   m_GameObject: {fileID: 804013721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.046, y: 0.272, z: -0.516}
+  m_LocalPosition: {x: -0.04, y: 0.244, z: -0.039}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 990586938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &804013723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804013721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb7fb47706e4f8da2cc8eee2b0cf97b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::game.dispensers.HandleDispenser
+  handlePrefab: {fileID: 5365981589856206213, guid: 22c610d90dc9ffd48aa445d2ba2fa3f7, type: 3}
+  handleDispenserObject: {fileID: 804013721}
+  storeGUI: {fileID: 1136009953}
 --- !u!1 &848694389
 GameObject:
   m_ObjectHideFlags: 0
@@ -5384,6 +5400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 804013722}
+  - {fileID: 1586099227}
   - {fileID: 1156086180}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6401,6 +6418,8 @@ MonoBehaviour:
   balanceMaterials: {fileID: 1352346148}
   balanceUpgrades: {fileID: 1493710011}
   coalDispenser: {fileID: 1156086181}
+  handleDispenser: {fileID: 804013723}
+  ironDispenser: {fileID: 1586099226}
 --- !u!1 &1156086179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6447,7 +6466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::game.dispensers.CoalDispenser
   coalPrefab: {fileID: 9203446432670604583, guid: 9c01e0757f13ae345944399c2d30250b, type: 3}
   coalDispenserObject: {fileID: 1156086179}
-  storeGUI: {fileID: 0}
+  storeGUI: {fileID: 1136009953}
 --- !u!1 &1206052704
 GameObject:
   m_ObjectHideFlags: 0
@@ -8991,6 +9010,53 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1586099225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1586099227}
+  - component: {fileID: 1586099226}
+  m_Layer: 0
+  m_Name: IronOreDispenser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1586099226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586099225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c997ff64b4644476bd58f5bc6cd277ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::game.dispensers.IronDispenser
+  ironPrefab: {fileID: 6400417098085707692, guid: 2803da0f7b4495745857c1640c6c377b, type: 3}
+  ironDispenserObject: {fileID: 1586099225}
+  storeGUI: {fileID: 1136009953}
+--- !u!4 &1586099227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586099225}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.203, y: -0.277, z: -0.272}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 990586938}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1589009615
 GameObject:
   m_ObjectHideFlags: 0

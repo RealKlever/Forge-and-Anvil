@@ -14,6 +14,7 @@ namespace game.materials
         public bool recentlySpawned = false;
         public CoalDispenser coalDispenser;
         public StoreGUI storeGUI;
+        public Rigidbody rigidbody;
 
         public void spawnNewCoal(SelectExitEventArgs args)
         {
@@ -30,6 +31,7 @@ namespace game.materials
             if (recentlySpawned)
             {
                 recentlySpawned = false;
+                rigidbody.constraints = RigidbodyConstraints.None;
                 GameLogic.player.getInventory().removeItem(Item.COAL);
                 storeGUI.updateAmount(Item.COAL);
                 coalDispenser.trySpawnCoal();

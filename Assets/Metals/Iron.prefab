@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8106265208998996674}
   - component: {fileID: 6767618847316448859}
   - component: {fileID: 3464861331515096575}
+  - component: {fileID: 2583983597335449043}
   m_Layer: 0
   m_Name: Iron
   m_TagString: Metal
@@ -30,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6400417098085707692}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.41, y: 1.434, z: 29.543}
+  m_LocalRotation: {x: 0.16102903, y: 0.39138502, z: -0.06976827, w: 0.90333813}
+  m_LocalPosition: {x: -0.009999201, y: -0.012000024, z: -0.05300075}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,6 +132,7 @@ MonoBehaviour:
   hitsToMend: 8
   isMended: 0
   isHeated: 0
+  hammerHit: {fileID: 0}
 --- !u!54 &6767618847316448859
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -153,7 +155,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -205,10 +207,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2583983597335449043}
+        m_TargetAssemblyTypeName: game.materials.IronOre, Assembly-CSharp
+        m_MethodName: grabIron
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6767618847316448859}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_useGravity
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -285,3 +311,19 @@ MonoBehaviour:
   m_LimitAngularVelocity: 0
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
+--- !u!114 &2583983597335449043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6400417098085707692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ba927d8bd348fcbb1a4e620520b3e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::game.materials.IronOre
+  recentlySpawned: 0
+  ironDispenser: {fileID: 0}
+  storeGUI: {fileID: 0}
+  rigidbody: {fileID: 6767618847316448859}

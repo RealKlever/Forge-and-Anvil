@@ -310,6 +310,7 @@ MonoBehaviour:
   recentlySpawned: 0
   coalDispenser: {fileID: 0}
   storeGUI: {fileID: 0}
+  rigidbody: {fileID: 4567038722645758798}
 --- !u!4 &9203446432670761217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3830407899766764295, guid: c6fe0381847dcbd49882de385243245a, type: 3}
