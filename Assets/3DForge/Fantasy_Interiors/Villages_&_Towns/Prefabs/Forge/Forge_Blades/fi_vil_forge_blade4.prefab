@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6144462026220542494}
   m_Layer: 0
   m_Name: fi_vil_forge_blade4
-  m_TagString: Untagged
+  m_TagString: Blade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

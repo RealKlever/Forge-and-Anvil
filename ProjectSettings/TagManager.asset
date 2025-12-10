@@ -30,6 +30,8 @@ TagManager:
   - SamplesInfoPanel
   - QDSUIToggleCheckboxRadio
   - Metal
+  - Handle
+  - Blade
   layers:
   - Default
   - TransparentFX
