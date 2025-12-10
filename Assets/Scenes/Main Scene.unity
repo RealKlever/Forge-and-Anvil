@@ -434,6 +434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -959,15 +963,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4497488100617386, guid: 245a47e9cf6931949bf21f7468c7412a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2679482
+      value: 1.589
       objectReference: {fileID: 0}
     - target: {fileID: 4497488100617386, guid: 245a47e9cf6931949bf21f7468c7412a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.40328997
+      value: 0.429
       objectReference: {fileID: 0}
     - target: {fileID: 4497488100617386, guid: 245a47e9cf6931949bf21f7468c7412a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.060051
+      value: -7.242
       objectReference: {fileID: 0}
     - target: {fileID: 4497488100617386, guid: 245a47e9cf6931949bf21f7468c7412a, type: 3}
       propertyPath: m_LocalRotation.w
