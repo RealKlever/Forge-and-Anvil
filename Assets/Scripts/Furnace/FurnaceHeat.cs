@@ -4,11 +4,11 @@ public class FurnaceHeat : MonoBehaviour
 {
     public float temperature = 1300.0f;
 
-    private float heatingRate;
+    public float heatingRate;
 
     private void Star1t()
     {
-        heatingRate = temperature;
+        heatingRate = temperature/40.0f;
     }
 
     // When metal enters the furnace, start heating it
@@ -16,6 +16,13 @@ public class FurnaceHeat : MonoBehaviour
     {
         if (other.CompareTag("Metal"))
         {
+            // Tie-in to the visual script (separate file)
+            MetalTemperatureColor visual = other.GetComponent<MetalTemperatureColor>();
+            if (visual != null)
+            {
+                visual.NotifyEnteredFurnace(this);
+            }
+
             Metal metal = other.GetComponent<Metal>();
             if (metal != null)
             {
@@ -36,6 +43,13 @@ public class FurnaceHeat : MonoBehaviour
     {
         if (other.CompareTag("Metal"))
         {
+            // Tie-in to the visual script (separate file)
+            MetalTemperatureColor visual = other.GetComponent<MetalTemperatureColor>();
+            if (visual != null)
+            {
+                visual.NotifyExitedFurnace(this);
+            }
+
             Metal metal = other.GetComponent<Metal>();
             if (metal != null)
             {

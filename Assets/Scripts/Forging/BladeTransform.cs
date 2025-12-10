@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class BladeTransform : MonoBehaviour
 {
-    private Transform metalTransform;
+    private Transform handleTransform;
     public GameObject blade;
     public AudioSource bladeFall;
 
     private void Start()
     {
-        metalTransform = this.transform;
+        handleTransform = this.transform;
     }
 
     // Update is called once per frame
@@ -20,9 +20,9 @@ public class BladeTransform : MonoBehaviour
             Metal metal = other.GetComponent<Metal>();
             if (metal != null && metal.hitsToMend == 0)
             {
-                metalTransform = metal.transform;
+                handleTransform = metal.transform;
                 Destroy(other.gameObject);
-                Instantiate(blade, metalTransform.position, metalTransform.rotation);
+                Instantiate(blade, handleTransform.position, handleTransform.rotation);
                 bladeFall.Play();
             }
         }
