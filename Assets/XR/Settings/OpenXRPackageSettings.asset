@@ -188,7 +188,7 @@ MonoBehaviour:
   lateLatchingDebug: 0
   optimizeMultiviewRenderRegions: 0
   multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegions: 0
+  m_hasMigratedMultiviewRenderRegions: 1
   spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &-7012508731970576296
 MonoBehaviour:
@@ -203,27 +203,27 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: -839399620810232593}
-  - {fileID: -8413059425370684860}
   - {fileID: 687045171116007524}
   - {fileID: 2691862725609937397}
+  - {fileID: 5918754801610548711}
+  - {fileID: 8587271620551956876}
+  - {fileID: 8897423625885862332}
   - {fileID: 4963148101538951227}
+  - {fileID: -7748259048147580327}
+  - {fileID: -1226939426585793586}
+  - {fileID: 5953905082528045223}
+  - {fileID: -6438879860579509132}
+  - {fileID: -5024158783048987843}
   - {fileID: -4765314135449713426}
   - {fileID: -1840444157413317127}
-  - {fileID: 7879237901759387498}
-  - {fileID: -1226939426585793586}
-  - {fileID: 8897423625885862332}
   - {fileID: -139880517626023645}
-  - {fileID: -5024158783048987843}
-  - {fileID: 5918754801610548711}
-  - {fileID: 5953905082528045223}
-  - {fileID: 2745750174260569031}
+  - {fileID: -8413059425370684860}
   - {fileID: 6087793568298423594}
+  - {fileID: 7879237901759387498}
+  - {fileID: -839399620810232593}
   - {fileID: -4931236216700701760}
-  - {fileID: -7748259048147580327}
-  - {fileID: 8587271620551956876}
+  - {fileID: 2745750174260569031}
   - {fileID: 2150375016733092916}
-  - {fileID: -6438879860579509132}
   m_renderMode: 1
   m_latencyOptimization: 0
   m_autoColorSubmissionMode: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &-6893005374110280757
@@ -782,26 +782,26 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: -8744652031137340072}
-  - {fileID: -6893005374110280757}
-  - {fileID: -5297003000838940339}
-  - {fileID: -7211019956230584590}
+  - {fileID: -4168195392473863492}
   - {fileID: 4938482313135278834}
   - {fileID: 2538191242100555375}
-  - {fileID: -4168195392473863492}
+  - {fileID: -7558618951669777873}
+  - {fileID: 2797772966964726504}
+  - {fileID: 6833028272810920924}
   - {fileID: -5214028349758967450}
+  - {fileID: 4553098093433325623}
+  - {fileID: -15540477585569871}
+  - {fileID: -7211019956230584590}
+  - {fileID: 8480740353969407631}
   - {fileID: -6587289716502203344}
   - {fileID: -1114925277412470292}
-  - {fileID: -7890236362831270971}
-  - {fileID: 6833028272810920924}
-  - {fileID: 8480740353969407631}
-  - {fileID: -7558618951669777873}
-  - {fileID: 4553098093433325623}
-  - {fileID: -9160649800212015096}
+  - {fileID: -5297003000838940339}
+  - {fileID: -6893005374110280757}
   - {fileID: 6724498454642818689}
-  - {fileID: 2797772966964726504}
+  - {fileID: -7890236362831270971}
+  - {fileID: -8744652031137340072}
+  - {fileID: -9160649800212015096}
   - {fileID: -6602331669890186468}
-  - {fileID: -15540477585569871}
   m_renderMode: 1
   m_latencyOptimization: 0
   m_autoColorSubmissionMode: 1
@@ -813,7 +813,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &4963148101538951227
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &5918754801610548711
