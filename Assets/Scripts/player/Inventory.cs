@@ -58,6 +58,15 @@ namespace player
             }
         }
 
+        public int getItemCount(Item item)
+        {
+            if (items.ContainsKey(item))
+            {
+                return items[item];
+            }
+            return 0;
+        }
+
         public void logInventory()
         {
             Debug.Log($"Inventory: {balance}, {items}");

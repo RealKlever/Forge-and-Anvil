@@ -1,4 +1,5 @@
 ﻿using System;
+using game.furnace;
 using player;
 using store.gui;
 using store.logic;
@@ -11,6 +12,8 @@ namespace game
         
         public static Player player;
 
+        // public static Furnace furnace;
+
         public static bool balanceWasUpdated = false;
                 
         private void Start()
@@ -22,6 +25,7 @@ namespace game
         private void initializeGameLogicVars()
         {
             player = new Player();
+            // furnace = new Furnace();
 
 
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using game;
+using game.dispensers;
 using store.logic;
 using TMPro;
 using UnityEngine;
@@ -42,6 +43,8 @@ namespace store.gui
         private Dictionary<Item, int> upgradesBought = new Dictionary<Item, int>();
         
         private Dictionary<Item, StoreItemGUI> ItemsToGUIs = new Dictionary<Item, StoreItemGUI>();
+
+        public CoalDispenser coalDispenser;
         
         private void Start()
         {
@@ -107,6 +110,14 @@ namespace store.gui
             }
         }
 
+        public void updateAmount(Item item)
+        {
+            if (item.getType() == Item.ItemType.Material)
+            {
+                ItemsToGUIs[item].amount.text = $"{GameLogic.player.getInventory().getItemCount(item)}";
+            }
+        }
+
         private void buyItem(Item item)
         {
             TextMeshProUGUI price = ItemsToGUIs[item].price;
@@ -134,6 +145,12 @@ namespace store.gui
                     int item_amount = GameLogic.player.getInventory().addItem(item);
                     adjustBalance(-current_price);
                     amount.text = $"{item_amount}";
+
+                    if (item_amount == 1 && item == Item.COAL)
+                    {
+                        coalDispenser.trySpawnCoal();
+                    }
+                    
                 }
             }
 

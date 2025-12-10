@@ -1,0 +1,46 @@
+﻿using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
+namespace game.furnace
+{
+    public class CoalSocket : MonoBehaviour
+    {
+        public XRSocketInteractor socket;
+
+        public Furnace furnace;
+        
+        
+        private void OnEnable()
+        {
+            socket.selectEntered.AddListener(OnObjectPlaced);
+        }
+
+        private void OnDisable()
+        {
+            socket.selectEntered.RemoveListener(OnObjectPlaced);
+        }
+
+        private void OnObjectPlaced(SelectEnterEventArgs args)
+        {
+            // Check if the placed object is the correct one
+            // if (args.interactableObject.transform == correctObject.transform)
+            if (args.interactableObject.transform.CompareTag("coal"))
+            {
+                // Lock the object so it cannot be removed
+                args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = false;
+                args.interactableObject.transform.GetComponent<Rigidbody>().useGravity = false;
+                // socket.allowSelect = false;
+                socket.socketActive = false;
+                furnace.addCoal(15, args.interactableObject.transform.gameObject, socket);  //TODO: use 300 secs
+
+                Debug.Log("Coal placed. It is now locked.");
+            }
+            else
+            {
+                Debug.Log("Wrong object inserted.");
+            }
+        }
+    }
+}
