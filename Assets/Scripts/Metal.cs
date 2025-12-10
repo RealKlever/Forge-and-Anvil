@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Metal : MonoBehaviour
@@ -8,12 +9,14 @@ public class Metal : MonoBehaviour
     public bool isMended;
     public bool isHeated;
 
-
-    public void HeatMetal(float heatingRate)
+    // Coroutine to heat the metal over time
+    public IEnumerator HeatMetal(float heatingRate)
     {
-        if(!isHeated)
+        while(!isHeated)
         {
-            temperature += heatingRate * Time.deltaTime;
+            yield return new WaitForSeconds(1f);
+
+            temperature += heatingRate;
             Debug.Log("Metal temperature: " + temperature);
 
             if (temperature >= heatingTemp)
@@ -26,20 +29,14 @@ public class Metal : MonoBehaviour
 
     public void HitMetal()
     {
-        if(!isMended && isHeated)
+        if (!isMended && isHeated)
         {
             hitsToMend--;
             Debug.Log("Metal hit! Hits remaining to mend: " + hitsToMend);
             if (hitsToMend <= 0)
             {
-                MendMetal();
+                isMended = true;
             }
         }
-    }
-
-    public void MendMetal()
-    {
-        isMended = true;
-        Debug.Log("Metal has been mended!");
     }
 }

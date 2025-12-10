@@ -34,6 +34,7 @@ public class HitMechanics : MonoBehaviour
     void TriggerPressed(InputAction.CallbackContext context)
     {
         triggerPressed = true;
+        Debug.Log("Trigger pressed, ready to hit.");
     }
 
     // When hammer collides with metal, check if trigger was pressed and if hammer was swung down sufficiently
@@ -42,9 +43,14 @@ public class HitMechanics : MonoBehaviour
         if (collision.gameObject.CompareTag("Metal") && triggerPressed)
         {
             float finalPosY = hammer.transform.position.y;
-            if (startPosY - finalPosY > 1.5f)
+            if (startPosY - finalPosY > 1.25f)
             {
-                Debug.Log("Hit detected on metal with sufficient force!");
+                Metal metal = collision.gameObject.GetComponent<Metal>();
+                if (metal != null)
+                {
+                    metal.HitMetal();
+                }
+
                 triggerPressed = false;
             }
         }
