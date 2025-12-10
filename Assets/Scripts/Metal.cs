@@ -9,6 +9,8 @@ public class Metal : MonoBehaviour
     public bool isMended;
     public bool isHeated;
 
+    public AudioSource hammerHit;
+
     // Coroutine to heat the metal over time
     public IEnumerator HeatMetal(float heatingRate)
     {
@@ -32,11 +34,18 @@ public class Metal : MonoBehaviour
         if (!isMended && isHeated)
         {
             hitsToMend--;
+            hammerHit.Play();
+
             Debug.Log("Metal hit! Hits remaining to mend: " + hitsToMend);
             if (hitsToMend <= 0)
             {
                 isMended = true;
             }
         }
+    }
+
+    public void BladeTransform()
+    {
+
     }
 }

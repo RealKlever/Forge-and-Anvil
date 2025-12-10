@@ -5,7 +5,6 @@ public class FurnaceHeat : MonoBehaviour
     public float temperature = 1300.0f;
 
     private float heatingRate;
-    private Coroutine tempRoutine;
 
     private void Start()
     {
@@ -20,12 +19,12 @@ public class FurnaceHeat : MonoBehaviour
             Metal metal = other.GetComponent<Metal>();
             if (metal != null)
             {
-                tempRoutine = StartCoroutine(metal.HeatMetal(heatingRate));
                 if (metal.isHeated)
                 {
-                    StopCoroutine(tempRoutine);
-                    tempRoutine = null;
+                    StopCoroutine(metal.HeatMetal(heatingRate));
                 }
+                else
+                    StartCoroutine(metal.HeatMetal(heatingRate));
 
                 Debug.Log("Metal entered furnace and is being heated.");
             }
@@ -40,8 +39,7 @@ public class FurnaceHeat : MonoBehaviour
             Metal metal = other.GetComponent<Metal>();
             if (metal != null)
             {
-                StopCoroutine(tempRoutine);
-                tempRoutine = null;
+                StopCoroutine(metal.HeatMetal(heatingRate));
                 Debug.Log("Metal exited furnace.");
             }
         }

@@ -43,7 +43,7 @@ public class HitMechanics : MonoBehaviour
         if (collision.gameObject.CompareTag("Metal") && triggerPressed)
         {
             float finalPosY = hammer.transform.position.y;
-            if (startPosY - finalPosY > 1.25f)
+            if (startPosY - finalPosY > 0.4f)
             {
                 Metal metal = collision.gameObject.GetComponent<Metal>();
                 if (metal != null)
