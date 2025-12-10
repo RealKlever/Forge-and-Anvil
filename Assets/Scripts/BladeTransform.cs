@@ -2,15 +2,29 @@ using UnityEngine;
 
 public class BladeTransform : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Transform metalTransform;
+    public GameObject blade;
+    public AudioSource bladeFall;
+
+    private void Start()
     {
-        
+        metalTransform = this.transform;
     }
 
     // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (other.CompareTag("Metal"))
+        {
+            // Get the Blade component from the collided object
+            Metal metal = other.GetComponent<Metal>();
+            if (metal != null && metal.hitsToMend == 0)
+            {
+                metalTransform = metal.transform;
+                Destroy(other.gameObject);
+                Instantiate(blade, metalTransform.position, metalTransform.rotation);
+                bladeFall.Play();
+            }
+        }
     }
 }
