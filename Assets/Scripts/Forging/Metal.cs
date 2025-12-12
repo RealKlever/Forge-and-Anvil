@@ -43,9 +43,4 @@ public class Metal : MonoBehaviour
             }
         }
     }
-
-    public void BladeTransform()
-    {
-
-    }
 }

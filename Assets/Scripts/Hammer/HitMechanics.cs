@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,5 +55,13 @@ public class HitMechanics : MonoBehaviour
                 triggerPressed = false;
             }
         }
+    }
+
+    private IEnumerator triggerTime()
+    {
+        yield return new WaitForSeconds(2f);
+
+        triggerPressed = false;
+        Debug.Log("Trigger reset after timeout.");
     }
 }
