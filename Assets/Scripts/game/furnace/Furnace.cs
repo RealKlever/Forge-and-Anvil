@@ -7,6 +7,7 @@ namespace game.furnace
     public class Furnace : MonoBehaviour
     {
 
+        public GameObject furnaceLight;
         private int coalAmount = 0;
 
         public void addCoal(int secondsBurnTime, GameObject coalObject, XRSocketInteractor socket)
@@ -24,6 +25,7 @@ namespace game.furnace
             coalAmount--;
             Destroy(coalObject);
             socket.socketActive = true;  // Enable socket again
+            furnaceLight.SetActive(false);
         }
         
     }

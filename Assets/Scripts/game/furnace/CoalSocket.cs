@@ -34,6 +34,7 @@ namespace game.furnace
                 // socket.allowSelect = false;
                 socket.socketActive = false;
                 furnace.addCoal(15, args.interactableObject.transform.gameObject, socket);  //TODO: use 300 secs
+                furnace.furnaceLight.SetActive(true);
 
                 Debug.Log("Coal placed. It is now locked.");
             }
