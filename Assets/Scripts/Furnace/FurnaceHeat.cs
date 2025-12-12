@@ -1,14 +1,25 @@
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class FurnaceHeat : MonoBehaviour
 {
     public float temperature = 1300.0f;
 
     public float heatingRate;
+    public bool furnaceActive = false;
+
+    private Metal metal;
 
     private void Start()
     {
-        heatingRate = temperature/10.0f;
+        heatingRate = temperature/25.0f;
+        metal = new Metal();
+    }
+
+    private void Update()
+    {
+        if (metal.isHeated || !furnaceActive)
+           StopAllCoroutines();
     }
 
     // When metal enters the furnace, start heating it
@@ -23,14 +34,10 @@ public class FurnaceHeat : MonoBehaviour
                 visual.NotifyEnteredFurnace(this);
             }
 
-            Metal metal = other.GetComponent<Metal>();
+            metal = other.GetComponent<Metal>();
             if (metal != null)
             {
-                if (metal.isHeated)
-                {
-                    StopCoroutine(metal.HeatMetal(heatingRate));
-                }
-                else
+                if(!metal.isHeated && furnaceActive)
                     StartCoroutine(metal.HeatMetal(heatingRate));
 
                 Debug.Log("Metal entered furnace and is being heated.");
@@ -50,12 +57,21 @@ public class FurnaceHeat : MonoBehaviour
                 visual.NotifyExitedFurnace(this);
             }
 
-            Metal metal = other.GetComponent<Metal>();
             if (metal != null)
             {
-                StopCoroutine(metal.HeatMetal(heatingRate));
+                StopAllCoroutines();
                 Debug.Log("Metal exited furnace.");
             }
         }
+    }
+
+    public void ActivateFurnace()
+    {
+        furnaceActive = true;
+    }
+
+    public void DeactivateFurnace()
+    {
+        furnaceActive = false;
     }
 }

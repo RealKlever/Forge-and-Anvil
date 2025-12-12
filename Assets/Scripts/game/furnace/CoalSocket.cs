@@ -37,6 +37,7 @@ namespace game.furnace
                 furnace.addCoal(30, args.interactableObject.transform.gameObject, socket);  //TODO: use 300 secs
                 furnace.furnaceLight.SetActive(true);
                 furnace.furnaceHeat.GetComponent<BoxCollider>().enabled = true;
+                furnace.furnaceHeat.GetComponent<FurnaceHeat>().ActivateFurnace();
 
                 Debug.Log("Coal placed. It is now locked.");
             }

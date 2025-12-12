@@ -28,6 +28,7 @@ namespace game.furnace
             socket.socketActive = true;  // Enable socket again
             furnaceLight.SetActive(false);
             furnaceHeat.GetComponent<BoxCollider>().enabled = false;
+            furnaceHeat.GetComponent<FurnaceHeat>().DeactivateFurnace();
         }
         
     }
