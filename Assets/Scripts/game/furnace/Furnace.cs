@@ -8,6 +8,7 @@ namespace game.furnace
     {
 
         public GameObject furnaceLight;
+        public GameObject furnaceHeat;
         private int coalAmount = 0;
 
         public void addCoal(int secondsBurnTime, GameObject coalObject, XRSocketInteractor socket)
@@ -26,6 +27,7 @@ namespace game.furnace
             Destroy(coalObject);
             socket.socketActive = true;  // Enable socket again
             furnaceLight.SetActive(false);
+            furnaceHeat.GetComponent<BoxCollider>().enabled = false;
         }
         
     }
