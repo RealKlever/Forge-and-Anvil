@@ -31,9 +31,10 @@ namespace game.furnace
                 // Lock the object so it cannot be removed
                 args.interactableObject.transform.GetComponent<XRGrabInteractable>().enabled = false;
                 args.interactableObject.transform.GetComponent<Rigidbody>().useGravity = false;
+                args.interactableObject.transform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
                 // socket.allowSelect = false;
                 socket.socketActive = false;
-                furnace.addCoal(15, args.interactableObject.transform.gameObject, socket);  //TODO: use 300 secs
+                furnace.addCoal(30, args.interactableObject.transform.gameObject, socket);  //TODO: use 300 secs
                 furnace.furnaceLight.SetActive(true);
 
                 Debug.Log("Coal placed. It is now locked.");
