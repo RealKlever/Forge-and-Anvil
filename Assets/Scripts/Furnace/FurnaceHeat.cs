@@ -8,7 +8,7 @@ public class FurnaceHeat : MonoBehaviour
 
     private void Start()
     {
-        heatingRate = temperature/40.0f;
+        heatingRate = temperature/10.0f;
     }
 
     // When metal enters the furnace, start heating it
