@@ -35,7 +35,9 @@ public class HitMechanics : MonoBehaviour
     void TriggerPressed(InputAction.CallbackContext context)
     {
         triggerPressed = true;
+        StartCoroutine(triggerTime());
         Debug.Log("Trigger pressed, ready to hit.");
+        StopCoroutine(triggerTime());
     }
 
     // When hammer collides with metal, check if trigger was pressed and if hammer was swung down sufficiently
@@ -59,7 +61,7 @@ public class HitMechanics : MonoBehaviour
 
     private IEnumerator triggerTime()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
 
         triggerPressed = false;
         Debug.Log("Trigger reset after timeout.");
