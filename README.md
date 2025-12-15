@@ -1,5 +1,13 @@
 # Forge and Anvil
 
+## Running
+
+Clone Repository -> Download Meta Quest Developer Hub (MQDH) -> Plug in Meta Quest -> Navigate to Device Manager in MQDH -> Find Apps Section -> Click Add Builds -> Add FinalBuild.apk from the Repository -> Put on Meta Quest -> Go to Quest Library -> Click Unknown Sources -> Open FinalBuild
+
+## Testing
+
+Clone Repository -> Open Unity Hub -> Click Add Project From Disk -> Add Forge and Anvil -> Open Project -> For No Meta Quest (Open XR in the Hierarchy and Turn On XR Device Simulator), with Meta Quest (Do No Turn it On and Plug in Meta Quest) -> Press Play at the Top -> Test
+
 ## Gameplay Tutorial
 
 You will spawn inside the forge, to get started head outside to the stable. There will be a menu there (the store) which you can use to buy items. To start, buy one handle, one iron, and two coal. Head back into the forge and head to the back right of the building. In the corner, there will be three barrels, in each of the barrels, the items you just bought will be sticking out.
@@ -14,3 +22,8 @@ Once the iron is finished heating, take it out of the furnace, and place it onto
 * To hit the metal, it also must be on the anvil  
 
 You know when the metal is done needing to be hit once it transforms into the blade. One you obtain the blade, grab the handle from the barrel. Bring it to the blade, and combine them by placing the handle on top of the blade. Once you do this, the two will combine and transform into a sword.
+
+### Videos
+
+I combined the two videos into one. The outside video is like a facecame in the top left of the app being recorded. Here is the link: 
+https://youtu.be/BObwjjBEPLM
