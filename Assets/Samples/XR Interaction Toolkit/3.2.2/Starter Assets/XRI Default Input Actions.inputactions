@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "XRI Default Input Actions",
     "maps": [
         {
@@ -3395,6 +3396,34 @@
                     "action": "Spawn Object",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "TriggerInput",
+            "id": "fcd85aa2-e650-4889-b896-5f19ed6bdd48",
+            "actions": [
+                {
+                    "name": "RightTriggerDown",
+                    "type": "Button",
+                    "id": "2757a26e-2dcc-4ae1-8216-7a65d2375755",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7bbf28e9-2fbc-45d8-8baf-a66ed106b79a",
+                    "path": "<XRController>{RightHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightTriggerDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

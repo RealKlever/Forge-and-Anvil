@@ -10,6 +10,7 @@ public class Metal : MonoBehaviour
     public bool isHeated;
 
     public AudioSource hammerHit;
+    public AudioSource heatingFinished;
 
     // Coroutine to heat the metal over time
     public IEnumerator HeatMetal(float heatingRate)
@@ -24,6 +25,7 @@ public class Metal : MonoBehaviour
             if (temperature >= heatingTemp)
             {
                 isHeated = true;
+                heatingFinished.Play();
                 Debug.Log("Metal is heated to mending temperature!");
             }
         }
@@ -42,10 +44,5 @@ public class Metal : MonoBehaviour
                 isMended = true;
             }
         }
-    }
-
-    public void BladeTransform()
-    {
-
     }
 }

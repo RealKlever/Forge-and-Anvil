@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -34,7 +35,9 @@ public class HitMechanics : MonoBehaviour
     void TriggerPressed(InputAction.CallbackContext context)
     {
         triggerPressed = true;
+        StartCoroutine(triggerTime());
         Debug.Log("Trigger pressed, ready to hit.");
+        StopCoroutine(triggerTime());
     }
 
     // When hammer collides with metal, check if trigger was pressed and if hammer was swung down sufficiently
@@ -43,7 +46,7 @@ public class HitMechanics : MonoBehaviour
         if (collision.gameObject.CompareTag("Metal") && triggerPressed)
         {
             float finalPosY = hammer.transform.position.y;
-            if (startPosY - finalPosY > 0.4f)
+            if (startPosY - finalPosY > 0.2f)
             {
                 Metal metal = collision.gameObject.GetComponent<Metal>();
                 if (metal != null)
@@ -54,5 +57,13 @@ public class HitMechanics : MonoBehaviour
                 triggerPressed = false;
             }
         }
+    }
+
+    private IEnumerator triggerTime()
+    {
+        yield return new WaitForSeconds(3f);
+
+        triggerPressed = false;
+        Debug.Log("Trigger reset after timeout.");
     }
 }
