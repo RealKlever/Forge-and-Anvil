@@ -12,7 +12,7 @@ public class FurnaceHeat : MonoBehaviour
 
     private void Start()
     {
-        heatingRate = temperature/25.0f;
+        heatingRate = temperature/10.0f;
         metal = new Metal();
     }
 
